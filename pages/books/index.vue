@@ -107,6 +107,7 @@ export default {
   }
 
   .input-group-append {
+    align-items: center;
     padding: 0 1rem;
     border-radius: 0 0.5rem 0.5rem 0;
     background: #f3f3f3;
