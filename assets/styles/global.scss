@@ -1,0 +1,25 @@
+html,
+body,
+#__nuxt,
+#__layout {
+  height: 100%;
+  min-height: 100%;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0 !important; // stylelint-disable-line declaration-no-important
+}
+
+.page-transition-enter-active,
+.page-transition-leave-active,
+.layout-transition-enter-active,
+.layout-transition-leave-active {
+  transition: opacity 0.16s;
+}
+
+.page-transition-enter,
+.page-transition-leave-to,
+.layout-transition-enter,
+.layout-transition-leave-to {
+  opacity: 0;
+}
