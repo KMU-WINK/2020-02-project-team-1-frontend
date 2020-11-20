@@ -107,6 +107,7 @@ export default {
   }
 
   .input-group-append {
+    align-items: center;
     margin-left: 1rem;
 
     .icon {
