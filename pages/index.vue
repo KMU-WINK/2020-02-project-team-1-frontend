@@ -21,24 +21,32 @@
           </b-col>
           <b-col cols="4">
             <div class="book-item">
-              <img src="https://image.aladin.co.kr/product/1478/34/cover500/8996094064_1.jpg">
+              <nuxt-link to="/books/1">
+                <img src="https://image.aladin.co.kr/product/1478/34/cover500/8996094064_1.jpg">
+              </nuxt-link>
             </div>
           </b-col>
           <b-col cols="4">
             <div class="book-item">
-              <img src="https://image.aladin.co.kr/product/10060/76/cover500/k042536874_1.jpg">
+              <nuxt-link to="/books/1">
+                <img src="https://image.aladin.co.kr/product/10060/76/cover500/k042536874_1.jpg">
+              </nuxt-link>
             </div>
           </b-col>
         </b-row>
         <b-row>
           <b-col cols="4">
             <div class="book-item">
-              <img src="https://image.aladin.co.kr/product/25268/11/cover500/k792633202_1.jpg">
+              <nuxt-link to="/books/1">
+                <img src="https://image.aladin.co.kr/product/25268/11/cover500/k792633202_1.jpg">
+              </nuxt-link>
             </div>
           </b-col>
           <b-col cols="4">
             <div class="book-item">
-              <img src="https://image.aladin.co.kr/product/25075/14/cover500/k952632854_1.jpg">
+              <nuxt-link to="/books/1">
+                <img src="https://image.aladin.co.kr/product/25075/14/cover500/k952632854_1.jpg">
+              </nuxt-link>
             </div>
           </b-col>
         </b-row>
@@ -53,17 +61,23 @@
         <b-row>
           <b-col cols="4">
             <div class="book-item">
-              <img src="https://image.aladin.co.kr/product/17812/31/cover500/8964213610_1.jpg">
+              <nuxt-link to="/books/1">
+                <img src="https://image.aladin.co.kr/product/17812/31/cover500/8964213610_1.jpg">
+              </nuxt-link>
             </div>
           </b-col>
           <b-col cols="4">
             <div class="book-item">
-              <img src="https://image.aladin.co.kr/product/1478/34/cover500/8996094064_1.jpg">
+              <nuxt-link to="/books/1">
+                <img src="https://image.aladin.co.kr/product/1478/34/cover500/8996094064_1.jpg">
+              </nuxt-link>
             </div>
           </b-col>
           <b-col cols="4">
             <div class="book-item">
-              <img src="https://image.aladin.co.kr/product/10060/76/cover500/k042536874_1.jpg">
+              <nuxt-link to="/books/1">
+                <img src="https://image.aladin.co.kr/product/10060/76/cover500/k042536874_1.jpg">
+              </nuxt-link>
             </div>
           </b-col>
         </b-row>
