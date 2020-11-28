@@ -91,7 +91,10 @@
 
 <script>
 export default {
-
+  async asyncData ({ app }) {
+    const data = await app.$api.books.list()
+    return { data }
+  }
 }
 </script>
 

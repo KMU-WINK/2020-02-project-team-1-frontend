@@ -14,9 +14,14 @@ export default {
     ]
   },
 
-  // router: {
-  //   base: '/wink'
-  // },
+  router: {
+    // base: '/wink'
+    extendRoutes(routes) {
+      for (const key in routes) {
+        routes[key].caseSensitive = true;
+      }
+    },
+  },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
@@ -25,6 +30,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/api'
+
   ],
 
   layoutTransition: {
@@ -54,6 +61,7 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
@@ -63,7 +71,15 @@ export default {
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    baseURL: "http://localhost:4000/api",
+    proxy: true,
+    credentials: false,
+  },
+
+  proxy: {
+    '/api': 'http://localhost:4000/api',
+  },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
