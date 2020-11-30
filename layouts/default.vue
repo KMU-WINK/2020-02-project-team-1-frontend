@@ -5,7 +5,9 @@
         <img src="~/assets/images/wink.png" class="logo">
       </nuxt-link>
     </header>
-    <Nuxt class="content" />
+    <b-container fluid>
+      <Nuxt class="content" />
+    </b-container>
     <footer class="footer">
       <div class="icons">
         <nuxt-link to="/">
@@ -106,6 +108,11 @@ html {
   .logo {
     height: 100%;
   }
+}
+
+.container-fluid {
+  max-width: 460px;
+  padding: 0;
 }
 
 .footer {
