@@ -16,11 +16,11 @@ export default {
 
   router: {
     // base: '/wink'
-    extendRoutes(routes) {
+    extendRoutes (routes) {
       for (const key in routes) {
-        routes[key].caseSensitive = true;
+        routes[key].caseSensitive = true
       }
-    },
+    }
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -72,13 +72,24 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: 'http://wink-library-alb-730399121.ap-northeast-2.elb.amazonaws.com/api',
+    // baseURL: 'http://wink-library-alb-730399121.ap-northeast-2.elb.amazonaws.com/api',
     proxy: true,
     credentials: false,
+    headers: {
+      Accept: 'application/json',
+      post: { 'Content-Type': 'application/json' },
+      put: { 'Content-Type': 'application/json' },
+      patch: { 'Content-Type': 'application/json' },
+    }
   },
 
   proxy: {
-    '/api': 'http://wink-library-alb-730399121.ap-northeast-2.elb.amazonaws.com/api',
+    '/api': {
+      target: 'http://wink-library-alb-730399121.ap-northeast-2.elb.amazonaws.com/api',
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
