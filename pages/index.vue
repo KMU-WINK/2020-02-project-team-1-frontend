@@ -12,6 +12,21 @@
       </h4>
       <div class="books">
         <b-row>
+          <!-- books 배열에서 각각 아이템 표시, v-for 문법으로 순회  -->
+          <b-col v-for="book in books" :key="book" cols="4">
+            <div class="book-item">
+              <nuxt-link to="/books/1">
+                <img src="https://image.aladin.co.kr/product/17812/31/cover500/8964213610_1.jpg">
+              </nuxt-link>
+            </div>
+            <span>
+              <!-- item의 제목 -->
+              {{ book.title }}
+            </span>
+          </b-col>
+        </b-row>
+        <!-- Dummy datas -->
+        <!-- <b-row>
           <b-col cols="4">
             <div class="book-item">
               <nuxt-link to="/books/1">
@@ -49,7 +64,8 @@
               </nuxt-link>
             </div>
           </b-col>
-        </b-row>
+        </b-row> -->
+        <!-- Dummy datas -->
       </div>
     </section>
 
@@ -59,27 +75,21 @@
       </h4>
       <div class="books">
         <b-row>
-          <b-col cols="4">
-            <div class="book-item">
-              <nuxt-link to="/books/1">
-                <img src="https://image.aladin.co.kr/product/17812/31/cover500/8964213610_1.jpg">
-              </nuxt-link>
-            </div>
-          </b-col>
-          <b-col cols="4">
-            <div class="book-item">
-              <nuxt-link to="/books/1">
-                <img src="https://image.aladin.co.kr/product/1478/34/cover500/8996094064_1.jpg">
-              </nuxt-link>
-            </div>
-          </b-col>
-          <b-col cols="4">
-            <div class="book-item">
-              <nuxt-link to="/books/1">
-                <img src="https://image.aladin.co.kr/product/10060/76/cover500/k042536874_1.jpg">
-              </nuxt-link>
-            </div>
-          </b-col>
+          <!-- books 배열에서 각각 아이템 표시, v-for 문법으로 순회  -->
+          <template v-for="book in books">
+            <!-- isRent가 false인 아이템만 표시 (대여가능) -->
+            <b-col v-if="!book.isRent" :key="book" cols="4">
+              <div class="book-item">
+                <nuxt-link to="/books/1">
+                  <img src="https://image.aladin.co.kr/product/17812/31/cover500/8964213610_1.jpg">
+                </nuxt-link>
+              </div>
+              <span>
+                <!-- item의 제목 -->
+                {{ book.title }}
+              </span>
+            </b-col>
+          </template>
         </b-row>
       </div>
     </section>
@@ -91,9 +101,12 @@
 
 <script>
 export default {
+  // nuxt에서 비 동기 데이터를 fetch 하는 방법입니다.
+  // asyncData 메소드를 사용해 가져옵니다.
+  // https://ko.nuxtjs.org/docs/2.x/features/data-fetching/#async-data
   async asyncData ({ app }) {
-    const data = await app.$api.books.list()
-    return { data }
+    const books = await app.$api.books.list()
+    return { books } // 가져온 books 배열 데이터를 페이지 컴포넌트 data에 fetching
   }
 }
 </script>
