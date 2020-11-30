@@ -72,13 +72,13 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: "http://localhost:4000/api",
+    baseURL: 'http://wink-library-alb-730399121.ap-northeast-2.elb.amazonaws.com/api',
     proxy: true,
     credentials: false,
   },
 
   proxy: {
-    '/api': 'http://localhost:4000/api',
+    '/api': 'http://wink-library-alb-730399121.ap-northeast-2.elb.amazonaws.com/api',
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
